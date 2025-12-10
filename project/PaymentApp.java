@@ -14,8 +14,6 @@ Variable, class, Interface or Methods naming must follow the java standards and 
  * Supports UPI, Card, and Wallet payments
  */
 
-// PaymentApp.java  → One file only (Simple + Real Steps)
-
 import java.util.Scanner;
 
 public class PaymentApp {
@@ -41,8 +39,7 @@ public class PaymentApp {
             System.out.println("Transaction ID: UPI" + System.currentTimeMillis());
         }
     }
-
-    // 2. Card Payment (Real Steps)
+    
     static class CardPayment implements Payment {
         public void process(double amount) {
             Scanner sc = new Scanner(System.in);
@@ -62,7 +59,7 @@ public class PaymentApp {
         }
     }
 
-    // 3. Wallet Payment (Real Steps)
+
     static class WalletPayment implements Payment {
         public void process(double amount) {
             Scanner sc = new Scanner(System.in);
@@ -109,9 +106,10 @@ public class PaymentApp {
             return;
         }
 
-        // This one line works for all 3 methods → Polymorphism
+    
         payment.process(amount);
 
         System.out.println("\nThank You! Visit Again");
     }
+
 }
